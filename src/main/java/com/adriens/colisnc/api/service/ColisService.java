@@ -28,4 +28,8 @@ public class ColisService {
         out = ColisCrawler.getColisRows(itemId);
         return out;
     }
+    
+    public ColisDataRow getLatestRow(String itemId) throws Exception {
+        return ColisCrawler.getLatest(itemId);
+    }
 }

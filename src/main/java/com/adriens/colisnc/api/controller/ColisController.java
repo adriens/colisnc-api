@@ -38,5 +38,18 @@ public class ColisController {
             throw ex;
         }
     }
+    
+    @GetMapping("/colis/{itemId}/latest")
+    @CrossOrigin(origins = "*", allowedHeaders = "*")
+    public ColisDataRow getLatest(@PathVariable String itemId) throws Exception {
+        try{
+            return colisService.getLatestRow(itemId);
+        }
+        catch(Exception ex){
+            log.error("Impossible de récupérer les derniers détails du colis <"+ itemId + ">");
+            throw ex;
+        }
+    }
+    
 
 }
