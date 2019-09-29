@@ -32,4 +32,7 @@ public class ColisService {
     public ColisDataRow getLatestRow(String itemId) throws Exception {
         return ColisCrawler.getLatest(itemId);
     }
+    public ColisDataRow getOldestRow(String itemId) throws Exception {
+        return ColisCrawler.getOldest(itemId);
+    }
 }
