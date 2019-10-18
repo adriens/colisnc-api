@@ -5,6 +5,7 @@
  */
 package com.adriens.colisnc.api.controller;
 
+import com.adriens.colisnc.api.model.StepsCounter;
 import com.adriens.colisnc.api.service.ColisService;
 import com.adriens.github.colisnc.colisnc.ColisDataRow;
 import java.util.List;
@@ -44,6 +45,18 @@ public class ColisController {
     public ColisDataRow getLatest(@PathVariable String itemId) throws Exception {
         try{
             return colisService.getLatestRow(itemId);
+        }
+        catch(Exception ex){
+            log.error("Impossible de récupérer les derniers détails du colis <"+ itemId + ">");
+            throw ex;
+        }
+    }
+    
+    @GetMapping("/colis/{itemId}/count")
+    @CrossOrigin(origins = "*", allowedHeaders = "*")
+    public StepsCounter getNbSteps(@PathVariable String itemId) throws Exception {
+        try{
+            return colisService.getNbSteps(itemId);
         }
         catch(Exception ex){
             log.error("Impossible de récupérer les derniers détails du colis <"+ itemId + ">");

@@ -15,5 +15,6 @@ mvn spring-boot:run
 ```
 /colis/{itemId}
 /colis/{itemId]/latest
+/colis/{itemId]/count
 ```
 

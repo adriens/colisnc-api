@@ -5,6 +5,7 @@
  */
 package com.adriens.colisnc.api.service;
 
+import com.adriens.colisnc.api.model.StepsCounter;
 import com.adriens.github.colisnc.colisnc.ColisCrawler;
 import com.adriens.github.colisnc.colisnc.ColisDataRow;
 import java.util.ArrayList;
@@ -34,5 +35,9 @@ public class ColisService {
     }
     public ColisDataRow getOldestRow(String itemId) throws Exception {
         return ColisCrawler.getOldest(itemId);
+    }
+    
+    public StepsCounter getNbSteps(String itemId) throws Exception {
+        return new StepsCounter(ColisCrawler.getColisRows(itemId).size());
     }
 }
