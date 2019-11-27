@@ -40,4 +40,9 @@ public class ColisService {
     public StepsCounter getNbSteps(String itemId) throws Exception {
         return new StepsCounter(ColisCrawler.getColisRows(itemId).size());
     }
+
+    public ArrayList<ColisDataRow> getLatestStatusForColisList(List<String> itemsId) throws Exception {
+        return ColisCrawler.getLatestStatusForColisList(itemsId);
+    }
+
 }
